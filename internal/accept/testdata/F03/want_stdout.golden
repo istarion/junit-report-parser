@@ -1,0 +1,12 @@
+verdict=fail
+root=ROOT run=TS age=AGE reports=1 modules=1 stale=false
+totals tests=1 passed=0 failed=0 errors=1 skipped=0 flaky=0 time=0.42s
+group count=1 fingerprint=cdbc2e1a
+  msg Connection refused: connect
+  tests com.example.CartTest#testCheckout
+fail id=com.example.CartTest#testCheckout status=error module=app loc=RedisClient.kt:31 type=java.net.ConnectException time=0.42s
+  msg Connection refused: connect
+  at com.example.cart.RedisClient.connect(RedisClient.kt:31)
+  at com.example.CartTest.testCheckout(CartTest.kt:88)
+  trunc 1 frames hidden
+hint junit-results show com.example.CartTest#testCheckout

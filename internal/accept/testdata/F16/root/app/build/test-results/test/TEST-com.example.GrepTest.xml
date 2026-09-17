@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.GrepTest" tests="2" failures="1" errors="0" skipped="0" timestamp="2026-09-17T11:58:00Z" time="0.3">
+  <testcase name="lessThan" classname="com.example.GrepTest" time="0.1">
+    <failure message="expected count &lt; 5" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected count &lt; 5
+	at com.example.GrepTest.lessThan(GrepTest.kt:7)
+</failure>
+  </testcase>
+  <testcase name="greaterThan" classname="com.example.GrepTest" time="0.2"/>
+</testsuite>

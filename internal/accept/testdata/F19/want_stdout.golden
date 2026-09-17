@@ -1,0 +1,18 @@
+verdict=fail
+root=ROOT run=TS age=AGE reports=1 modules=1 stale=false
+totals tests=6 passed=3 failed=1 errors=1 skipped=1 flaky=1 time=6.65s
+stat kind=status status=passed count=3 share=50.0%
+stat kind=status status=failed count=1 share=16.7%
+stat kind=status status=error count=1 share=16.7%
+stat kind=status status=skipped count=1 share=16.7%
+stat kind=duration sum=6.65s mean=1.11s median=0.1s p90=6.0s p95=6.0s max=6.0s
+stat kind=slowest rank=1 id=com.example.StatsTest#e1 time=6.0s status=error
+stat kind=slowest rank=2 id=com.example.StatsTest#f1 time=0.3s status=failed
+stat kind=slowest rank=3 id=com.example.StatsTest#p2 time=0.2s status=passed
+stat kind=slowest rank=4 id=com.example.StatsTest#p1 time=0.1s status=passed
+stat kind=slowest rank=5 id=com.example.StatsTest#fl1 time=50ms status=passed
+stat kind=type count=1 type=com.example.BoomOne
+stat kind=type count=1 type=com.example.BoomTwo
+stat kind=module name=app tests=6 failed=1 errors=1 skipped=1 time=6.65s
+stat kind=flaky id=com.example.StatsTest#fl1 time=50ms
+stat kind=skipped count=1 reason="not ready"

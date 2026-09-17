@@ -1,0 +1,7 @@
+verdict=fail
+root=ROOT run=TS age=AGE reports=1 modules=1 stale=false
+totals tests=2 passed=1 failed=1 errors=0 skipped=0 flaky=0 time=0.3s
+match id=com.example.GrepTest#lessThan module=app status=failed field=message line=1
+  text expected count < 5
+match id=com.example.GrepTest#lessThan module=app status=failed field=trace line=1
+  text org.opentest4j.AssertionFailedError: expected count < 5

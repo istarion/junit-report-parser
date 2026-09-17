@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.CartTest" tests="1" failures="0" errors="1" skipped="0" timestamp="2026-09-17T11:58:00Z" time="0.42">
+  <testcase name="testCheckout" classname="com.example.CartTest" time="0.42">
+    <error message="Connection refused: connect" type="java.net.ConnectException">java.net.ConnectException: Connection refused: connect
+	at com.example.cart.RedisClient.connect(RedisClient.kt:31)
+	at com.example.CartTest.testCheckout(CartTest.kt:88)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+</error>
+  </testcase>
+</testsuite>

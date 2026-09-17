@@ -1,0 +1,4 @@
+verdict=pass
+root=ROOT run=TS age=AGE reports=1 modules=1 stale=false
+totals tests=2 passed=2 failed=0 errors=0 skipped=0 flaky=0 time=0.3s
+warn PARSE_ERROR app/build/test-results/test/TEST-com.example.Bad.xml

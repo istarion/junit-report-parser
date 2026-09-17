@@ -1,0 +1,9 @@
+verdict=pass
+root=ROOT run=TS age=AGE reports=1 modules=1 stale=false
+totals tests=3 passed=1 failed=0 errors=0 skipped=2 flaky=0 time=0.3s
+stat kind=status status=passed count=1 share=33.3%
+stat kind=status status=failed count=0 share=0.0%
+stat kind=status status=error count=0 share=0.0%
+stat kind=status status=skipped count=2 share=66.7%
+stat kind=skipped count=1 reason=(none)
+stat kind=skipped count=1 reason="not ready"

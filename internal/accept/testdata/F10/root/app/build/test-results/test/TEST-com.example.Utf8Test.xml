@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.Utf8Test" tests="1" failures="1" errors="0" skipped="0" timestamp="2026-09-17T11:58:00Z" time="0.2">
+  <testcase name="readsLegacyOutput" classname="com.example.Utf8Test" time="0.2">
+    <failure message="café output mismatch" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: café output mismatch
+	at com.example.Utf8Test.readsLegacyOutput(Utf8Test.kt:9)
+</failure>
+  </testcase>
+</testsuite>

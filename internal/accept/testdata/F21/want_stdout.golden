@@ -1,0 +1,15 @@
+verdict=fail
+root=ROOT run=TS age=AGE reports=1 modules=1 stale=false
+totals tests=1 passed=0 failed=0 errors=1 skipped=0 flaky=0 time=50ms
+group count=1 fingerprint=d12d2bed
+  msg boom
+  tests com.example.ReflectTest#viaReflection
+fail id=com.example.ReflectTest#viaReflection status=error module=app loc=Method.java:568 type=java.lang.reflect.UndeclaredThrowableException time=50ms
+  msg boom
+  at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+  at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+  at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:515)
+  trunc 3 frames hidden
+hint junit-results show com.example.ReflectTest#viaReflection

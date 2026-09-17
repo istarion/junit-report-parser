@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.ReflectTest" tests="1" failures="0" errors="1" skipped="0" timestamp="2026-09-17T11:58:00Z" time="0.05">
+  <testcase name="viaReflection" classname="com.example.ReflectTest" time="0.05">
+    <error message="boom" type="java.lang.reflect.UndeclaredThrowableException">java.lang.reflect.UndeclaredThrowableException: boom
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:515)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:63)
+</error>
+  </testcase>
+</testsuite>

@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "tool": {
+    "name": "junit-results",
+    "version": "test"
+  },
+  "generatedAt": "GENERATED",
+  "command": "summary",
+  "root": "ROOT",
+  "run": {
+    "timestamp": "2026-09-17T11:58:00Z",
+    "ageSeconds": 120,
+    "stale": false,
+    "reports": 1,
+    "modules": 1
+  },
+  "totals": {
+    "tests": 2,
+    "passed": 1,
+    "failures": 1,
+    "errors": 0,
+    "skipped": 0,
+    "flaky": 0,
+    "timeSeconds": 0.55
+  },
+  "modules": [
+    {
+      "name": "app",
+      "tests": 2,
+      "failures": 1,
+      "errors": 0,
+      "skipped": 0,
+      "timeSeconds": 0.55
+    }
+  ],
+  "failures": [
+    {
+      "id": "com.example.CalcTest#computesTotal",
+      "classname": "com.example.CalcTest",
+      "name": "computesTotal",
+      "module": "app",
+      "status": "failed",
+      "type": "org.opentest4j.AssertionFailedError",
+      "message": "expected: <3> but was: <4>",
+      "trace": [
+        "org.opentest4j.AssertionFailedError: expected: <3> but was: <4>",
+        "\tat com.example.CalcTest.computesTotal(CalcTest.kt:42)",
+        "\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)"
+      ],
+      "flaky": false,
+      "timeSeconds": 0.42,
+      "reportPath": "app/build/test-results/test/TEST-com.example.CalcTest.xml",
+      "loc": "CalcTest.kt:42"
+    }
+  ],
+  "groups": [
+    {
+      "fingerprint": "af5412d2",
+      "count": 1,
+      "sampleMessage": "expected: <3> but was: <4>",
+      "tests": [
+        "com.example.CalcTest#computesTotal"
+      ]
+    }
+  ],
+  "stats": {
+    "status": {
+      "passed": 1,
+      "failed": 1,
+      "error": 0,
+      "skipped": 0
+    },
+    "duration": {
+      "sumSeconds": 0.55,
+      "meanSeconds": 0.275,
+      "medianSeconds": 0.13,
+      "p90Seconds": 0.42,
+      "p95Seconds": 0.42,
+      "maxSeconds": 0.42
+    },
+    "types": [
+      {
+        "type": "org.opentest4j.AssertionFailedError",
+        "count": 1
+      }
+    ],
+    "slowest": [
+      {
+        "id": "com.example.CalcTest#computesTotal",
+        "timeSeconds": 0.42,
+        "status": "failed"
+      },
+      {
+        "id": "com.example.CalcTest#divides",
+        "timeSeconds": 0.13,
+        "status": "passed"
+      }
+    ],
+    "byGroup": [
+      {
+        "name": "app",
+        "tests": 2,
+        "failed": 1,
+        "timeSeconds": 0.55
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": "com.example.CalcTest#computesTotal",
+      "classname": "com.example.CalcTest",
+      "name": "computesTotal",
+      "module": "app",
+      "status": "failed",
+      "type": "org.opentest4j.AssertionFailedError",
+      "message": "expected: <3> but was: <4>",
+      "trace": [
+        "org.opentest4j.AssertionFailedError: expected: <3> but was: <4>",
+        "\tat com.example.CalcTest.computesTotal(CalcTest.kt:42)",
+        "\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)"
+      ],
+      "flaky": false,
+      "timeSeconds": 0.42,
+      "reportPath": "app/build/test-results/test/TEST-com.example.CalcTest.xml",
+      "loc": "CalcTest.kt:42"
+    },
+    {
+      "id": "com.example.CalcTest#divides",
+      "classname": "com.example.CalcTest",
+      "name": "divides",
+      "module": "app",
+      "status": "passed",
+      "flaky": false,
+      "timeSeconds": 0.13,
+      "reportPath": "app/build/test-results/test/TEST-com.example.CalcTest.xml",
+      "loc": "-"
+    }
+  ],
+  "warnings": []
+}

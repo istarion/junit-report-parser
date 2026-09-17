@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.OutTest" tests="2" failures="0" errors="0" skipped="0" timestamp="2026-09-17T11:58:00Z" time="0.3">
+  <testcase name="logsStuff" classname="com.example.OutTest" time="0.2">
+    <system-out>connecting to needle-in-output on 127.0.0.1</system-out>
+  </testcase>
+  <testcase name="quiet" classname="com.example.OutTest" time="0.1"/>
+</testsuite>

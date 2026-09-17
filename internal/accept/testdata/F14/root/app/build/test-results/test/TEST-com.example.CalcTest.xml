@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.CalcTest" tests="2" failures="1" errors="0" skipped="0" timestamp="2026-09-17T11:58:00Z" time="0.55">
+  <testcase name="computesTotal" classname="com.example.CalcTest" time="0.42">
+    <failure message="expected: &lt;3&gt; but was: &lt;4&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;3&gt; but was: &lt;4&gt;
+	at com.example.CalcTest.computesTotal(CalcTest.kt:42)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+</failure>
+  </testcase>
+  <testcase name="divides" classname="com.example.CalcTest" time="0.13"/>
+</testsuite>

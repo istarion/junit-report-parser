@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.StatsTest" tests="6" failures="1" errors="1" skipped="1" timestamp="2026-09-17T11:58:00Z" time="6.65">
+  <testcase name="p1" classname="com.example.StatsTest" time="0.1"/>
+  <testcase name="p2" classname="com.example.StatsTest" time="0.2"/>
+  <testcase name="f1" classname="com.example.StatsTest" time="0.3">
+    <failure message="boom one" type="com.example.BoomOne">com.example.BoomOne: boom one
+	at com.example.StatsTest.f1(StatsTest.kt:30)
+</failure>
+  </testcase>
+  <testcase name="e1" classname="com.example.StatsTest" time="6.0">
+    <error message="boom two" type="com.example.BoomTwo"/>
+  </testcase>
+  <testcase name="s1" classname="com.example.StatsTest" time="0">
+    <skipped message="not ready"/>
+  </testcase>
+  <testcase name="fl1" classname="com.example.StatsTest" time="0.05">
+    <flakyFailure message="first try failed" type="com.example.Flake"/>
+  </testcase>
+</testsuite>

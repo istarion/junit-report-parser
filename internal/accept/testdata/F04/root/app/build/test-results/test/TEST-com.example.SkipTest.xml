@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.SkipTest" tests="3" failures="0" errors="0" skipped="2" timestamp="2026-09-17T11:58:00Z" time="0.3">
+  <testcase name="runs" classname="com.example.SkipTest" time="0.3"/>
+  <testcase name="needsEnv" classname="com.example.SkipTest" time="0">
+    <skipped message="not ready"/>
+  </testcase>
+  <testcase name="manual" classname="com.example.SkipTest" time="0">
+    <skipped/>
+  </testcase>
+</testsuite>

@@ -1,0 +1,8 @@
+verdict=fail
+root=ROOT run=TS age=AGE reports=1 modules=1 stale=false
+totals tests=1 passed=0 failed=1 errors=0 skipped=0 flaky=0 time=0.2s
+warn ENCODING invalid UTF-8 bytes replaced
+fail id=com.example.Utf8Test#readsLegacyOutput status=failed module=app loc=Utf8Test.kt:9 type=org.opentest4j.AssertionFailedError time=0.2s
+  msg caf� output mismatch
+  at com.example.Utf8Test.readsLegacyOutput(Utf8Test.kt:9)
+hint junit-results show com.example.Utf8Test#readsLegacyOutput

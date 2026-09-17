@@ -1,0 +1,9 @@
+verdict=fail
+root=ROOT run=TS age=AGE reports=1 modules=1 stale=false
+totals tests=2 passed=1 failed=1 errors=0 skipped=0 flaky=0 time=0.55s
+group count=1 fingerprint=af5412d2
+  msg expected: <3> but was: <4>
+  tests com.example.CalcTest#computesTotal
+fail id=com.example.CalcTest#computesTotal status=failed module=app loc=CalcTest.kt:42 type=org.opentest4j.AssertionFailedError time=0.42s
+  msg expected: <3> but was: <4>
+hint junit-results failures

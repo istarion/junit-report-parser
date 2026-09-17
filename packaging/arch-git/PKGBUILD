@@ -1,0 +1,61 @@
+# Maintainer: istarion <istarion at users dot noreply dot github dot com>
+# Note for AUR submission: the PKGBUILD itself must be 0BSD-licensed; the
+# packaged software stays MIT (LICENSE file installed in package()).
+#
+# VCS PACKAGE — builds from the upstream git HEAD; usable today (no tags
+# required). provides/conflicts let it replace the release package.
+
+pkgname=junit-results-git
+pkgver=r2.7451e1d # placeholder; makepkg replaces it via pkgver()
+pkgrel=1
+pkgdesc='Token-optimal JUnit XML digest for coding agents (CLI) (git)'
+arch=('x86_64')
+url='https://github.com/istarion/junit-report-parser'
+license=('MIT')
+depends=('glibc')
+makedepends=('go' 'git')
+provides=("${pkgname%-git}")
+conflicts=("${pkgname%-git}")
+options=('!lto') # REQUIRED: cgo + default makepkg LTO breaks Go reproducibility
+source=("$pkgname::git+$url.git")
+sha256sums=('SKIP') # VCS source -> always SKIP
+
+# Guideline idiom: tagged repos yield 0.1.0.rN.gHASH; untagged repos fall
+# back to r<rev-count>.<shorthash> so version ordering stays monotonic.
+pkgver() {
+  cd "$pkgname"
+  ( set -o pipefail
+    git describe --long --abbrev=7 2>/dev/null | sed 's/\([^-]*-g\)/r\1/;s/-/./g' ||
+    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
+  )
+}
+
+build() {
+  cd "$pkgname"
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export CGO_LDFLAGS="${LDFLAGS}"
+  export GOPATH="${srcdir}"
+  # Command-line -ldflags overrides GOFLAGS -ldflags: keep linker flags here.
+  # -buildvcs stays ENABLED on purpose: the checkout's .git is upstream's, so
+  # the binary embeds the genuine upstream commit.
+  export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
+  mkdir -p build
+  go build \
+    -ldflags "-linkmode=external -X main.version=${pkgver}" \
+    -o build/junit-results \
+    ./cmd/junit-results
+}
+
+check() {
+  cd "$pkgname"
+  export GOPATH="${srcdir}"
+  go test ./...
+}
+
+package() {
+  cd "$pkgname"
+  install -Dm755 build/junit-results "${pkgdir}/usr/bin/junit-results"
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname%-git}/LICENSE"
+}

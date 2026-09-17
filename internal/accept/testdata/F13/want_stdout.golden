@@ -1,0 +1,9 @@
+verdict=fail
+root=ROOT run=TS age=AGE reports=1 modules=1 stale=false
+totals tests=2 passed=1 failed=1 errors=0 skipped=0 flaky=0 time=0.3s
+group count=1 fingerprint=4522a09b
+  msg expected count < 5
+  tests com.example.GrepTest#lessThan
+fail id=com.example.GrepTest#lessThan status=failed module=app loc=GrepTest.kt:7 type=org.opentest4j.AssertionFailedError time=0.1s
+  msg expected count < 5
+hint junit-results failures

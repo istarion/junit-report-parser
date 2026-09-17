@@ -1,0 +1,62 @@
+# Maintainer: istarion <istarion at users dot noreply dot github dot com>
+# Note for AUR submission: the PKGBUILD itself must be 0BSD-licensed; the
+# packaged software stays MIT (LICENSE file installed in package()).
+#
+# RELEASE PACKAGE — requires the upstream tag v$pkgver to exist.
+# The repo currently has no tags, so this PKGBUILD cannot build until you
+# push v0.1.0. Until then, build the VCS variant in ../arch-git/.
+#
+# After tagging: fill in real sha256sums with `updpkgsums` (SKIP below only
+# as a placeholder; namcap flags it otherwise), then regenerate .SRCINFO:
+#   makepkg --printsrcinfo > .SRCINFO
+
+pkgname=junit-results
+pkgver=0.1.0
+pkgrel=1
+pkgdesc='Token-optimal JUnit XML digest for coding agents (CLI)'
+arch=('x86_64')
+url='https://github.com/istarion/junit-report-parser'
+license=('MIT')
+depends=('glibc')
+makedepends=('go')
+options=('!lto') # REQUIRED: cgo + default makepkg LTO breaks Go reproducibility
+_source="$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz"
+source=("$_source")
+sha256sums=('SKIP') # FILL IN via updpkgsums once the tag exists
+
+# Optional: vendor dependencies for offline/reproducible builds.
+# prepare() {
+#   cd "$_srcname-$pkgver"
+#   GOFLAGS='-mod=readonly' go mod vendor
+# }
+
+build() {
+  cd "$_srcname-$pkgver"
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export CGO_LDFLAGS="${LDFLAGS}"
+  export GOPATH="${srcdir}"
+  # NOTE: a command-line -ldflags overrides any -ldflags in GOFLAGS, so all
+  # linker flags go into this one combined -ldflags. -buildvcs=false keeps
+  # the packaging checkout's VCS metadata out of the binary.
+  export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
+  mkdir -p build
+  go build \
+    -buildvcs=false \
+    -ldflags "-linkmode=external -X main.version=${pkgver}" \
+    -o build/junit-results \
+    ./cmd/junit-results
+}
+
+check() {
+  cd "$_srcname-$pkgver"
+  export GOPATH="${srcdir}"
+  go test ./...
+}
+
+package() {
+  cd "$_srcname-$pkgver"
+  install -Dm755 build/junit-results "${pkgdir}/usr/bin/junit-results"
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

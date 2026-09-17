@@ -1,0 +1,13 @@
+verdict=fail
+root=ROOT run=TS age=AGE reports=1 modules=1 stale=false
+totals tests=3 passed=0 failed=2 errors=1 skipped=0 flaky=0 time=1.0s
+group count=1 fingerprint=229ed90b
+  msg expected count < 5
+  tests com.example.BudgetTest#b
+group count=1 fingerprint=31f122cc
+  msg boom
+  tests com.example.BudgetTest#c
+group count=1 fingerprint=f836ee2e
+  msg expected count < 5
+  tests com.example.BudgetTest#a
+hint junit-results show com.example.BudgetTest#a

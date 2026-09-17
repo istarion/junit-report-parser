@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.BudgetTest" tests="3" failures="2" errors="1" skipped="0" timestamp="2026-09-17T11:58:00Z" time="1.0">
+  <testcase name="a" classname="com.example.BudgetTest" time="0.3">
+    <failure message="expected count &lt; 5" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected count &lt; 5
+	at com.example.BudgetTest.a(BudgetTest.kt:10)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+</failure>
+  </testcase>
+  <testcase name="b" classname="com.example.BudgetTest" time="0.3">
+    <failure message="expected count &lt; 5" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected count &lt; 5
+	at com.example.BudgetTest.b(BudgetTest.kt:20)
+</failure>
+  </testcase>
+  <testcase name="c" classname="com.example.BudgetTest" time="0.4">
+    <error message="boom" type="java.net.ConnectException">java.net.ConnectException: boom
+	at com.example.BudgetTest.c(BudgetTest.kt:30)
+</error>
+  </testcase>
+</testsuite>

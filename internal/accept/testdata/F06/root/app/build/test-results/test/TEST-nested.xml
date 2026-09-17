@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="OuterSuite" timestamp="2026-09-17T11:57:00Z" time="0.7">
+    <testsuite name="InnerSuite" timestamp="2026-09-17T11:57:30Z" time="0.5">
+      <testcase name="nestedCase" classname="com.example.DeepTest" time="0.5"/>
+    </testsuite>
+    <testcase name="topCase" classname="com.example.TopTest" time="0.2"/>
+  </testsuite>
+</testsuites>

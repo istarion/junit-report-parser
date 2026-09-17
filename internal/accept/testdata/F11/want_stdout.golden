@@ -1,0 +1,4 @@
+verdict=pass
+root=ROOT run=TS age=AGE reports=1 modules=1 stale=true
+totals tests=1 passed=1 failed=0 errors=0 skipped=0 flaky=0 time=0.1s
+warn STALE newest report is 74d old
